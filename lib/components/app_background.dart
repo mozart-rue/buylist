@@ -16,7 +16,7 @@ class AppBackground extends StatelessWidget {
         Container( 
           height: size.height,
           width: size.width,
-          color: bkgColor,
+          color: gray_600,
         ),
         SizedBox(
           width: size.width,
