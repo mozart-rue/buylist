@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Buy List',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        fontFamily: 'Inter',
         useMaterial3: true,
       ),
       home: const HomeScreen(),
