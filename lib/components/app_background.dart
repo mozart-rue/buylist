@@ -20,8 +20,9 @@ class AppBackground extends StatelessWidget {
         ),
         SizedBox(
           width: size.width,
+          height: 180,
           child: Image.asset(
-            "assets/images/cover_image.jpg",
+            "assets/images/cover_mobile.png",
             fit: BoxFit.cover,
           ),
         ), 
