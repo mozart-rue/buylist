@@ -1,4 +1,5 @@
 import 'package:buylist/components/app_background.dart';
+import 'package:buylist/components/input_container.dart';
 import 'package:buylist/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -7,12 +8,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return const Scaffold(
       body: AppBackground(
         child: Center(
           child: Column(
             children: [
-              Padding(padding: EdgeInsets.only(top: 20)),
+              Padding(padding: EdgeInsets.only(top: 68)),
               Text(
                 'Lista De Compras',
                 textAlign: TextAlign.start,
@@ -21,6 +23,13 @@ class HomeScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
                 ),
+              ),
+              SizedBox(height: 20,),
+              Column(
+                children: [
+                  InputContainer(),
+                  SizedBox(height: 12,),
+                ],
               ),
             ],
           ),
