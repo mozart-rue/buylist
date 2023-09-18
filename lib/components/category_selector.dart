@@ -9,7 +9,7 @@ class CategorySelector extends StatefulWidget {
 }
 
 class _CategorySelectorState extends State<CategorySelector> {
-  List<String> list = ['Selecione', 'Padaria', 'Legume', 'Carne', 'Fruta', 'Bebida'];
+  List<String> list = ['Padaria', 'Legume', 'Carne', 'Fruta', 'Bebida'];
   String? dropDownValue;
 
   @override
@@ -24,19 +24,46 @@ class _CategorySelectorState extends State<CategorySelector> {
             fontSize: 12,
           ),
         ),
-        DropdownButton(
-          value: dropDownValue ?? list.first,
-          onChanged: (value) {
-            setState(() {
-              dropDownValue = value!;               
-            }); 
-          },
-          items: list.map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value),
-            );
-          }).toList(),
+        Container(
+          height: 40,
+          decoration: BoxDecoration(
+            color: gray_500,
+            borderRadius: BorderRadius.circular(6),
+          ),
+          child: DropdownButton(
+            value: dropDownValue ?? list.first,
+            onChanged: (value) {
+              setState(() {
+                dropDownValue = value!;               
+              }); 
+            },
+            underline: Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: gray_300),
+                color: gray_400,
+              ),
+            ),
+            dropdownColor: gray_400,
+            hint: const Text(
+              'Selecione',
+              style: TextStyle(
+                color: gray_200,
+                fontSize: 14,
+              ),
+            ),
+            items: list.map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(
+                  value,
+                  style: const TextStyle(
+                    color: gray_100,
+                    fontSize: 14,
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
         ),
       ],
     );
