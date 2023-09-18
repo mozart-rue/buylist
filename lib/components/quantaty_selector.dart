@@ -10,7 +10,7 @@ class QuantatiSelector extends StatefulWidget {
 }
 
 class _QuantatiSelectorState extends State<QuantatiSelector> {
-  List<String> mesureMetricsValues = ['UN.', 'KG'];
+  List<String> mesureMetricsValues = ['UN.', 'KG', 'L'];
   String? dropMetricValue;
 
   @override
