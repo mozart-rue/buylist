@@ -70,10 +70,17 @@ class _QuantatiSelectorState extends State<QuantatiSelector> {
                     dropMetricValue = value!;               
                   }); 
                 },
+                dropdownColor: gray_400,
                 items: mesureMetricsValues.map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
-                    child: Text(value),
+                    child: Text(
+                      value,
+                      style: const TextStyle(
+                        color: gray_100,
+                        fontSize: 14,
+                      ),
+                    ),
                   );
                 }).toList(),
               ),
