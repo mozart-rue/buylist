@@ -12,13 +12,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return const Scaffold(
+    return Scaffold(
       body: AppBackground(
         child: Center(
           child: Column(
             children: [
-              Padding(padding: EdgeInsets.only(top: 68)),
-              Text(
+              const Padding(padding: EdgeInsets.only(top: 68)),
+              const Text(
                 'Lista De Compras',
                 textAlign: TextAlign.start,
                 style: TextStyle( 
@@ -27,17 +27,19 @@ class HomeScreen extends StatelessWidget {
                   fontSize: 24,
                 ),
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Column(
                 children: [
-                  InputContainer(),
-                  SizedBox(height: 12,),
+                  const InputContainer(),
+                  const SizedBox(height: 12,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      QuantatiSelector(),
-                      CategorySelector(),
-                      AddItemButton(),
+                      const QuantatiSelector(),
+                      const CategorySelector(),
+                      AddItemButton(
+                        onTap: (){},
+                      ),
                     ],
                   )
                 ],
