@@ -1,5 +1,7 @@
 import 'package:buylist/components/app_background.dart';
+import 'package:buylist/components/category_selector.dart';
 import 'package:buylist/components/input_container.dart';
+import 'package:buylist/components/quantaty_selector.dart';
 import 'package:buylist/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -29,6 +31,12 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   InputContainer(),
                   SizedBox(height: 12,),
+                  Row(
+                    children: [
+                      QuantatiSelector(),
+                      CategorySelector(),
+                    ],
+                  )
                 ],
               ),
             ],
