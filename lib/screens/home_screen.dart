@@ -1,3 +1,4 @@
+import 'package:buylist/components/add_item_button.dart';
 import 'package:buylist/components/app_background.dart';
 import 'package:buylist/components/category_selector.dart';
 import 'package:buylist/components/input_container.dart';
@@ -32,9 +33,11 @@ class HomeScreen extends StatelessWidget {
                   InputContainer(),
                   SizedBox(height: 12,),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       QuantatiSelector(),
                       CategorySelector(),
+                      AddItemButton(),
                     ],
                   )
                 ],
