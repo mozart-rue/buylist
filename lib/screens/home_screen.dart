@@ -7,7 +7,9 @@ import 'package:buylist/constants.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+
+  final TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,10 @@ class HomeScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      const QuantatiSelector(),
+                      QuantatiSelector(
+                        controller: controller,
+                        mesureMetricsSelected: (value) {},
+                      ),
                       const CategorySelector(),
                       AddItemButton(
                         onTap: (){},
