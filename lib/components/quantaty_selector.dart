@@ -1,9 +1,16 @@
 import 'package:buylist/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+
+typedef MesureMetricsSelected = void Function(String);
 
 class QuantatiSelector extends StatefulWidget {
-  const QuantatiSelector({super.key});
+  final TextEditingController controller;
+  final MesureMetricsSelected mesureMetricsSelected;
+  const QuantatiSelector({
+    required this.controller,
+    required this.mesureMetricsSelected,
+    super.key
+  });
 
   @override
   State<QuantatiSelector> createState() => _QuantatiSelectorState();
@@ -37,17 +44,18 @@ class _QuantatiSelectorState extends State<QuantatiSelector> {
                   bottomLeft: Radius.circular(6)
                 ),
               ),
-              child: const Center(
+              child: Center(
                 child: TextField(
+                  controller: widget.controller,
                   textAlign: TextAlign.center,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: InputBorder.none,
                     hintText: "0",
                     hintStyle: TextStyle(
                       color: gray_100,
                     ),
                   ),
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: gray_100,
                   ),
                 ),
@@ -68,7 +76,8 @@ class _QuantatiSelectorState extends State<QuantatiSelector> {
                 onChanged: (value) {
                   setState(() {
                     dropMetricValue = value!;               
-                  }); 
+                  });
+                  widget.mesureMetricsSelected(value!);
                 },
                 dropdownColor: gray_400,
                 items: mesureMetricsValues.map<DropdownMenuItem<String>>((String value) {
