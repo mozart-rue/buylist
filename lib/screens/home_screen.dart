@@ -41,7 +41,9 @@ class HomeScreen extends StatelessWidget {
                         controller: controller,
                         mesureMetricsSelected: (value) {},
                       ),
-                      const CategorySelector(),
+                      CategorySelector(
+                        categorySelected:(value) {},
+                      ),
                       AddItemButton(
                         onTap: (){},
                       ),
