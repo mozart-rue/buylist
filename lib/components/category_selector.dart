@@ -1,8 +1,14 @@
 import 'package:buylist/constants.dart';
 import 'package:flutter/material.dart';
 
+typedef CategorySelected = void Function(String);
+
 class CategorySelector extends StatefulWidget {
-  const CategorySelector({super.key});
+  final CategorySelected categorySelected;
+  const CategorySelector({
+    required this.categorySelected,
+    super.key
+  });
 
   @override
   State<CategorySelector> createState() => _CategorySelectorState();
@@ -35,7 +41,8 @@ class _CategorySelectorState extends State<CategorySelector> {
             onChanged: (value) {
               setState(() {
                 dropDownValue = value!;               
-              }); 
+              });
+              widget.categorySelected(value!);
             },
             underline: Container(
               decoration: BoxDecoration(
